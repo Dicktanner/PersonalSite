@@ -11,11 +11,18 @@
 </head>
 
 <body>
-	<h1>Dick Tanner Design</h1>
+	<h1 id="home">Dick Tanner Design</h1>
 	<div>
 	<ul id="nav" data-0="position:static;" data-top-top="position:fixed;top:0;" data-edge-strategy="set">
-		<li>First menu item</li>
-		<li>Second menu item</li>
+		<li><a id="homelink">Home</a></li>
+		<li><a id="skillslink">Skills</a></li>
+		<li><a id="aboutlink">About</a></li>
+		<li><a id="contactlink">Contact</a></li>
+		<li><a id="bloglink">Blog</a></li>
+		<li><a href="https://www.linkedin.com/pub/richard-tanner/74/ba9/983" target="_blank"><img src="images/linkedin.png"></a></li>
+		<li><a href="https://twitter.com/Dicktanner" target="_blank"><img src="images/twitter.png"></a></li>
+		<li><a href="http://stackoverflow.com/users/4154463/dick-tanner" target="_blank"><img src="images/stackoverflow.png"></a></li>
+		<li><a href=" https://github.com/Dicktanner" target="_blank"><img src="images/github.png"></a></li>
 	</ul>
 	<!--placeholder div to prevent jumpy content when nav gets pinned-->
 	<div style="padding:1em;" data-0="display:none;" data-top-top="display:block;" data-anchor-target="#nav" data-edge-strategy="set">&nbsp;</div>
@@ -83,21 +90,49 @@
 		</div>
 		<div class="gap gap-100" style="background-image:url(images/modern.jpg);"></div>
 		<div class="content content-full" id="functional">
-			Here be kittens
+			Resume
 		</div>
 		<div class="gap gap-50" style="background-image:url(images/functional.jpg);"></div>
 		<div class="content" id="done">
-			Images from <a href="http://placekitten.com/attribution.html">http://placekitten.com/</a>, thanks!
+			Pop in contact info one after another.
 		</div>
 	</div>
-
+	<script src="scripts/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="scripts/skrollr.min.js"></script>
 	<script type="text/javascript">
+	//skrollr
 	skrollr.init({
 		smoothScrolling: false,
 		mobileDeceleration: 0.004
 	});
-	</script>
+	//menu
+	var menuheight=$("#nav").height();
+	
+	$("#homelink").click(function() {
+	$('html, body').animate({
+	    scrollTop: $("#home").offset().top
+		}, 1000);
+	    });
+	$("#skillslink").click(function() {
+		$('html, body').animate({
+		    scrollTop: $("#modern").offset().top-menuheight
+		}, 1000);
+	    });
+	$("#aboutlink").click(function() {
+		$('html, body').animate({
+		    scrollTop: $("#functional").offset().top-menuheight
+		}, 1000);
+	    });
+	$("#contactlink").click(function() {
+		$('html, body').animate({
+		    scrollTop: $("#done").offset().top-menuheight
+		}, 1000);
+	    });
+	$("#bloglink").click(function() {
+	alert("Blog coming soon! Thanks for your interest.");
+    });
+
+</script>
 </body>
 
 </html>

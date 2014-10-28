@@ -1,7 +1,27 @@
 /*General styles*/
 h1 {
 	text-align: center;
-	
+}
+
+/* unvisited link */
+a:link {
+    color: #000;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: #000;
+}
+
+/* mouse over link */
+a:hover {
+    color: #eee;
+}
+
+/* selected link */
+a:active {
+    color: #ddd;
 }
 
 
@@ -129,14 +149,25 @@ body {font-family:sans-serif;}
 	padding:0;
 	margin:0;
 	width:100%;
-	background:#000;
-	color:#eee;
+	background:#D69999;
+	color:#000;
 	z-index: 4;
 	text-align: center;
+	font-size: 1em;
+	opacity: .9;
 }
 
 #nav > li {
 	display:inline-block;
 	padding:1em;
 	margin:0;
+	vertical-align: middle;
+}
+#nav > li > a> img{
+	height:2em;
+	width:2em;
+}
+#home {
+	background:#D69999;
+	opacity: .9;
 }
